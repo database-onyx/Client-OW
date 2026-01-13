@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme Comparison - Before & After</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+            font-size: 1.2em;
+        }
+
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .theme-section {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .theme-section h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+
+        .old-theme h2 {
+            color: #15803d;
+        }
+
+        .new-theme h2 {
+            color: #2563eb;
+        }
+
+        .color-palette {
+            display: grid;
+            gap: 15px;
+        }
+
+        .color-row {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .color-box {
+            width: 80px;
+            height: 80px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .color-box:hover {
+            transform: scale(1.1);
+        }
+
+        .color-info {
+            flex: 1;
+        }
+
+        .color-name {
+            font-weight: bold;
+            margin-bottom: 5px;
+            font-size: 1.1em;
+        }
+
+        .color-code {
+            color: #666;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+
+        .animations-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 40px;
+        }
+
+        .animations-section h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2em;
+        }
+
+        .animation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .animation-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .animation-card h3 {
+            margin-bottom: 10px;
+            color: #fbbf24;
+        }
+
+        .animation-card p {
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+
+        .demo-box {
+            width: 60px;
+            height: 60px;
+            background: #3b82f6;
+            border-radius: 10px;
+            margin: 15px auto;
+        }
+
+        .fade-demo {
+            animation: fadeIn 2s ease-in-out infinite;
+        }
+
+        .pulse-demo {
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .slide-demo {
+            animation: slideInLeft 2s ease-in-out infinite;
+        }
+
+        @keyframes fadeIn {
+
+            0%,
+            100% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            50% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+        @keyframes slideInLeft {
+
+            0%,
+            100% {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+
+            50% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #e5e7eb;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .comparison {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>🎨 OneWorld Vacation Theme Update</h1>
+        <p class="subtitle">Color Scheme Transformation: Green & Gold → Blue & Yellow</p>
+
+        <div class="comparison">
+            <!-- Old Theme -->
+            <div class="theme-section old-theme">
+                <h2>❌ Old Theme (Green & Gold)</h2>
+                <div class="color-palette">
+                    <div class="color-row">
+                        <div class="color-box" style="background: #f0fdf4;"></div>
+                        <div class="color-info">
+                            <div class="color-name">Primary 50</div>
+                            <div class="color-code">#f0fdf4</div>
+                        </div>
+                    </div>
+                    <div class="color-row">
+                        <div class="color-box" style="background: #22c55e;"></div>
+                        <div class="color-info">
+                            <div class="color-name">Primary 500 (Main)</div>
+                            <div class="color-code">#22c55e</div>
+                        </div>
+                    </div>
+                    <div class="color-row">
+                        <div class="color-box" style="background: #16a34a;"></div>
+                        <div class="color-info">
+                            <div class="color-name">Primary 600 (Hover)</div>
+                            <div class="color-code">#16a34a</div>
+                        </div>
+                    </div>
+                    <div class="color-row">
+                        <div class="color-box" style="background: #15803d;"></div>
+                        <div class="color-info">
+                            <div class="color-name">Primary 700 (Deep)</div>
+                            <div class="color-code">#15803d</div>
+                        </div>
+                    </div>
+                    <div class="color-row">
+                        <div class="color-box" style="background: #facc15;"></div>
+                        <div class="color-info">
+                            <div class="color-name">Accent 400 (Gold)</div>
+                            <div class="color-code">#facc15</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- New Theme -->
+            <div class="theme-section new-theme">
+                <h2>✅ New Theme (Blue & Yellow)</h2>
+                <div class="color-palette">
+                    <div class="color-row">
+                        <div class="color-box" style="background: #eff6ff;"></div>
+                        <div class="color-info">
+                            <div class="color-name">Primary 50</div>
+                            <div class="color-code">#eff6ff</div>
+                        </div>
+                    </div>
+                    <div class="color-row">
+                        <div class="color-box" style="background: #3b82f6;"></div>
+                        <div class="color-info">
+                            <div class="color-name">Primary 500 (Main)</div>
+                            <div class="color-code">#3b82f6</div>
+                        </div>
+                    </div>
+                    <div class="color-row">
+                        <div class="color-box" style="background: #2563eb;"></div>
+                        <div class="color-info">
+                            <div class="color-name">Primary 600 (Hover)</div>
+                            <div class="color-code">#2563eb</div>
+                        </div>
+                    </div>
+                    <div class="color-row">
+                        <div class="color-box" style="background: #1d4ed8;"></div>
+                        <div class="color-info">
+                            <div class="color-name">Primary 700 (Deep)</div>
+                            <div class="color-code">#1d4ed8</div>
+                        </div>
+                    </div>
+                    <div class="color-row">
+                        <div class="color-box" style="background: #fbbf24;"></div>
+                        <div class="color-info">
+                            <div class="color-name">Accent 400 (Yellow)</div>
+                            <div class="color-code">#fbbf24</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="animations-section">
+            <h2>✨ New Animations Added</h2>
+            <div class="animation-grid">
+                <div class="animation-card">
+                    <h3>Fade In</h3>
+                    <div class="demo-box fade-demo"></div>
+                    <p>Elements smoothly fade in from below with upward motion</p>
+                </div>
+                <div class="animation-card">
+                    <h3>Pulse</h3>
+                    <div class="demo-box pulse-demo"></div>
+                    <p>Gentle scaling effect for emphasis and attention</p>
+                </div>
+                <div class="animation-card">
+                    <h3>Slide In</h3>
+                    <div class="demo-box slide-demo"></div>
+                    <p>Elements slide in from left or right with smooth transition</p>
+                </div>
+                <div class="animation-card">
+                    <h3>Hover Glow</h3>
+                    <div class="demo-box" style="box-shadow: 0 0 20px rgba(59, 130, 246, 0.6);"></div>
+                    <p>Blue glow effect on hover for interactive elements</p>
+                </div>
+                <div class="animation-card">
+                    <h3>Bounce</h3>
+                    <div class="demo-box"></div>
+                    <p>Bouncing animation for call-to-action buttons</p>
+                </div>
+                <div class="animation-card">
+                    <h3>Shimmer</h3>
+                    <div class="demo-box"
+                        style="background: linear-gradient(90deg, #3b82f6 0%, #fbbf24 50%, #3b82f6 100%);"></div>
+                    <p>Animated gradient shimmer from blue to yellow</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p><strong>Files Updated:</strong> 12 HTML files (index.html + all tour pages)</p>
+            <p><strong>Total Animations:</strong> 7 keyframe animations + 4 hover effects</p>
+            <p><strong>Date:</strong> December 30, 2025</p>
+        </div>
+    </div>
+</body>
+
+</html>
